@@ -7,9 +7,9 @@ const folderSize = require('get-folder-size')
 const download = require('./')
 
 test('download', function (t) {
-  t.plan(2)
+  t.plan(3)
 
-  const COUNT = 100
+  const COUNT = process.env.COUNT || 10
 
   series([
     (callback) => download(COUNT, callback),
