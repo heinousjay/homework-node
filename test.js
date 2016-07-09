@@ -31,9 +31,7 @@ test('download', function (t) {
   function verifySize (callback) {
     folderSize('./packages', function (err, size) {
       if (err) return callback(err)
-      const Mb = (size / 1024 / 1024).toFixed(2)
-      const expected = COUNT / 2
-      t.ok(Mb > expected * 0.75 && Mb < expected * 1.25, 'size is within 25% of expected')
+      t.ok(size / 1024 > 5 * COUNT, 'min 5k per package')
     })
   }
 
