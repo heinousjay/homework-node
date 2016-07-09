@@ -32,6 +32,7 @@ test('download', function (t) {
     folderSize('./packages', function (err, size) {
       if (err) return callback(err)
       t.ok(size / 1024 > 5 * COUNT, 'min 5k per package')
+      callback()
     })
   }
 
