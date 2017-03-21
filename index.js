@@ -25,7 +25,7 @@ module.exports = function downloadPackages (count, callback) {
 		return names
 	}).then(names => {
 		return Promise.all(names.map(name => {
-			const uri = 'https://registry.npmjs.org/' + name;
+			const uri = 'https://registry.npmjs.org/' + name
 			console.log('finding info for', name, 'at', uri)
 			return request(uri).then(JSON.parse).then(info => {
 				console.log('found info for', name)
@@ -54,7 +54,7 @@ module.exports = function downloadPackages (count, callback) {
 				})
 				console.log('downloading and extracting', tarball.name, 'from', tarball.uri)
 			})
-		}));
+		}))
 	}).then(done => {
 		console.log('success!')
 		callback()
