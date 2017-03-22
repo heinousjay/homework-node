@@ -31,7 +31,7 @@ module.exports = function downloadPackages (count, callback) {
 				console.log('found info for', name)
 				// dig into the JSON to get the latest tarball
 				return {
-					name: name, 
+					name, 
 					uri: info["versions"][info["dist-tags"]["latest"]]['dist']['tarball']
 				}
 			})
